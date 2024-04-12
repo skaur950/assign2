@@ -1,3 +1,24 @@
+'''
+OPS445 Assignment 2
+Program: duim.py 
+Author: "Simran Kaur"
+The python code in this file (duim.py) is original work written by
+"Simran Kaur". No code in this file is copied from any other source 
+except those provided by the course instructor, including any person, 
+textbook, or on-line resource. I have not shared this python script 
+with anyone or anything except for submission for grading.  
+I understand that the Academic Honesty Policy will be enforced and 
+violators will be reported and appropriate action will be taken.
+
+Description: This Script is an improved version of the 'du' tool for inspecting directories. 
+It calls the 'du' command with max depth 1 on a specified directory and generates a bar graph 
+representation of the drive space usage for each subdirectory within the specified directory.
+
+Date: 4/12/2024 
+'''
+
+#!/usr/bin/env python3
+
 import os
 import sys
 import subprocess
@@ -124,10 +145,10 @@ def main():
         # Convert directory size to human-readable format if requested
         size_str = bytes_to_human_r(size) if args.human_readable else f"{size} bytes"
         # Print directory information with appropriate formatting and colors
-        print(f"{percent:.0f}% [{graph}] {Fore.BLUE}{size_str:<11} {Style.RESET_ALL}{directory}")
+        print(f"{Fore.GREEN}{percent:.2f}%{Style.RESET_ALL}  [{graph}] {Fore.BLUE}{size_str:<11} {Style.RESET_ALL}{directory}")
 
     # Print a separator line
-    print("-" * 55)
+    print("-" * 60)
     # Convert total size to human-readable format if requested
     total_size_str = bytes_to_human_r(total_size) if args.human_readable else f"{total_size} bytes"
     # Print total size and target directory
