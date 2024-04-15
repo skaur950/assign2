@@ -1,0 +1,50 @@
+Append: You can do it with lists but not sets.
+Answer: 1
+Definite Iteration: Handle a group of things one at a time using a loop.
+Answer: 4
+Mutable: Can be modified after being created.
+Answer: Not provided
+Iteration: Handle a group of things one at a time using a loop.
+Answer: 2
+Indefinite Iteration: When you don't know how many times a loop will occur.
+Answer: 5
+Step Over: One way of using a debugger, which does not enter into a function.
+Answer: 6
+Modulo: Gives the remainder of an integer division.
+Answer: 9
+Immutable: Can't be modified after being created.
+Answer: 8
+Scope: Defines the visibility and accessibility of variables within a program.
+Answer: Not provided
+Break Point: One way of using a debugger, which pauses the execution of Python code.
+
+def is_odd(number: int) -> bool:
+    """
+    Check if a number is odd.
+
+    Args:
+    - number (int): The number to check.
+
+    Returns:
+    - bool: True if the number is odd, False otherwise.
+    """
+    return number % 2 != 0
+
+
+import sys
+
+# Check if the number of command-line arguments is correct
+if len(sys.argv) < 2:
+    print("Usage: python script_name.py arg1 arg2 ...")
+    sys.exit(1)
+
+# Calculate the total length of all arguments
+total_length = 0
+for arg in sys.argv[1:]:
+    total_length += len(arg)
+
+# Calculate the average length
+average_length = total_length / (len(sys.argv) - 1)
+
+print("The average length of arguments is: " + str(average_length))
+
