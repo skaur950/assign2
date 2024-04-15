@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+"""
+Author: Simran Kaur
+
+This script performs file operations and processes data.
+"""
+
+import sys
+
+def fileop(filename):
+    try:
+        file = open(filename, 'r')
+        content = file.read()
+        file.close()
+        return content
+    except FileNotFoundError:
+        return ""
+
+def process_data(lines):
+    count = 0
+    for line in lines:
+        if line.startswith("banana"):
+            count += 1
+    return count
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Error: no arguments found")
+        sys.exit(1)
+
+    for filename in sys.argv[1:]:
+        file_contents = fileop(filename)
+        lines = file_contents.split('\n')
+        bananas_count = process_data(lines)
+        print(f"{filename}: {bananas_count} bananas!")
